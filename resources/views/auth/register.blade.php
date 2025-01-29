@@ -16,11 +16,11 @@
           </div>
         
           <form action="#" method="POST" class="space-y-6">
-        
+        @csrf
             <!-- Full Name -->
             <div>
               <label for="full-name" class="block text-sm font-medium text-gray-700">Full Name</label>
-              <input type="text" id="full-name" name="full-name" required placeholder="Enter your full name" class="mt-1 w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-[#c2946f] focus:border-[#c2946f] focus:outline-none transition duration-300 ease-in-out transform hover:shadow-lg" />
+              <input type="text" id="full-name" name="name" required placeholder="Enter your full name" class="mt-1 w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-[#c2946f] focus:border-[#c2946f] focus:outline-none transition duration-300 ease-in-out transform hover:shadow-lg" />
             </div>
         
             <!-- Email -->

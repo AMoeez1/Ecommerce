@@ -1,4 +1,5 @@
 @extends('layouts.pages')
+@section('title', 'Home')
 @section('content')
 <style>
     .bg-image {
@@ -26,7 +27,22 @@
     </div>
     {{-- <img src="{{asset('storage/banner.png')}}" class="col-span-1 w-[550px]" alt="banner-image"> --}}
 </section>
-
+@if (session('Res'))
+            <div class="flex justify-center transition-opacity text-green-500 duration-500 opacity-100" id="alert">
+                {{-- <x-bladewind::alert type="success" size='tiny' class=" w-80"> --}}
+                    {{ session('Res') }}
+                {{-- </x-bladewind::alert> --}}
+            </div>
+        @endif
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="flex justify-center transition-opacity duration-500 opacity-100" id="error">
+                    {{-- <x-bladewind::alert type="error" class="w-80"> --}}
+                        {{ $error }}
+                    {{-- </x-bladewind::alert> --}}
+                </div>
+            @endforeach
+        @endif
 
 <section class="bg-gray-50 h-[100vh] grid grid-cols-1 md:grid-cols-3 gap-8 p-8">
     

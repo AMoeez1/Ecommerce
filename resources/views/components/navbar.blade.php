@@ -11,6 +11,11 @@
             <a href="#" class="text-white hover:text-gray-200 transition">About</a>
             <a href="#" class="text-white hover:text-gray-200 transition">Services</a>
             <a href="#" class="text-white hover:text-gray-200 transition">Contact</a>
+            @if (auth()->user())
+            <a href="#" class="text-white hover:text-gray-200 transition">Profile</a>
+             @else   
+             <a href="{{route('register')}}" class="text-white hover:text-gray-200 transition">Register</a>
+            @endif
         </div>
 
         <!-- Mobile Menu Button -->

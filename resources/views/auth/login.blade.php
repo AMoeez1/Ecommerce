@@ -16,8 +16,8 @@
         <p class="mt-2 text-gray-600 text-lg">Please log in to your account</p>
       </div>
 
-      <form action="#" method="POST" class="space-y-6">
-
+      <form action="{{route('login')}}" method="POST" class="space-y-6">
+        @csrf
         <!-- Email -->
         <div>
           <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
