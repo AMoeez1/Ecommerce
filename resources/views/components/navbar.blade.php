@@ -12,10 +12,14 @@
             <a href="#" class="text-white hover:text-gray-200 transition">Services</a>
             <a href="#" class="text-white hover:text-gray-200 transition">Contact</a>
             @if (auth()->user())
-            <a href="#" class="text-white hover:text-gray-200 transition">Profile</a>
-             @else   
-             <a href="{{route('register')}}" class="text-white hover:text-gray-200 transition">Register</a>
+                <a href="#" class="text-white hover:text-gray-200 transition">Profile</a>
+            @else
+                <a href="{{ route('register') }}" class="text-white hover:text-gray-200 transition">Register</a>
             @endif
+            @if (auth()->check() && !auth()->user()->is_admin === false)
+                <a href="{{ route('admin') }}" class="text-white hover:text-gray-200 transition">Admin</a>
+            @endif
+
         </div>
 
         <!-- Mobile Menu Button -->
